@@ -59,52 +59,82 @@ class _HomeScreen5State extends State<HomeScreen5> {
                     child: CircularProgressIndicator(color: Colors.teal),
                   );
                 } else {
-                  return ListView.builder(
-                    itemCount: productList.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            Container(
+                  return Column(
+                    children: [
+                      Container(
+                        height: 180, // Height for the first list
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: snapshot.data!.length,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(right: 10),
+                              child: Container(
+                                width: 150,
+                                color: Colors.white,
+                                child: Image.network(
+                                  snapshot.data![index].url.toString(),
+                                  height: 200,
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                      SizedBox(height: 10), // Add spacing between the two lists
+                      Expanded(
+                        child: ListView.builder(
+                          scrollDirection: Axis.vertical,
+                          itemCount: snapshot.data!.length,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
                                 width: double.infinity,
                                 color: Colors.white,
-                                child: Column(
-                                  children: [
-                                    Image.network(
-                                      snapshot.data![index].url.toString(),
-                                      height: 200,
-                                    ),
-                                    SizedBox(height: 10),
-                                    Text(
-                                      "Product :- ${snapshot.data![index].title}",
-                                      style: TextStyle(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      Image.network(
+                                        snapshot.data![index].url.toString(),
+                                        height: 200,
+                                      ),
+                                      SizedBox(height: 10),
+                                      Text(
+                                        "Product :- ${snapshot.data![index].title}",
+                                        style: TextStyle(
                                           fontSize: 20.0,
                                           color:
-                                              Color.fromARGB(255, 63, 83, 93)),
-                                    ),
-                                    SizedBox(height: 10),
-                                    Text(
-                                      "Description :- ${snapshot.data![index].description}",
-                                      style: TextStyle(
+                                              Color.fromARGB(255, 63, 83, 93),
+                                        ),
+                                      ),
+                                      SizedBox(height: 10),
+                                      Text(
+                                        "Description :- ${snapshot.data![index].description}",
+                                        style: TextStyle(
                                           fontSize: 15.0,
-                                          color: Color.fromARGB(
-                                              255, 86, 145, 174)),
-                                    ),
-                                    SizedBox(height: 10),
-                                    Text(
-                                      "Price :- \$ ${snapshot.data![index].price}",
-                                      style: TextStyle(
-                                          fontSize: 20.0,
                                           color:
-                                              Color.fromARGB(255, 2, 16, 23)),
-                                    ),
-                                  ],
-                                ))
-                          ],
+                                              Color.fromARGB(255, 86, 145, 174),
+                                        ),
+                                      ),
+                                      SizedBox(height: 10),
+                                      Text(
+                                        "Price :- \$ ${snapshot.data![index].price}",
+                                        style: TextStyle(
+                                          fontSize: 20.0,
+                                          color: Color.fromARGB(255, 2, 16, 23),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
                         ),
-                      );
-                    },
+                      ),
+                    ],
                   );
                 }
               },
