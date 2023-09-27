@@ -71,17 +71,6 @@ class _HomeScreen2State extends State<HomeScreen2> {
                     );
                   }
                 },
-                // {
-                //   return ListView.builder(
-                //     itemCount: photosList.length,
-                //     itemBuilder: (context, index) {
-                //       return ListTile(
-                //         title: Text(snapshot.data![index].title.toString()),
-                //         subtitle: Text(snapshot.data![index].url.toString()),
-                //       );
-                //     },
-                //   );
-                // },
               ),
             )
           ],
