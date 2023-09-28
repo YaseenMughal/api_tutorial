@@ -62,7 +62,7 @@ class _HomeScreen5State extends State<HomeScreen5> {
                   return Column(
                     children: [
                       Container(
-                        height: 180, // Height for the first list
+                        height: 180,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: snapshot.data!.length,
@@ -81,7 +81,7 @@ class _HomeScreen5State extends State<HomeScreen5> {
                           },
                         ),
                       ),
-                      SizedBox(height: 10), // Add spacing between the two lists
+                      SizedBox(height: 10),
                       Expanded(
                         child: ListView.builder(
                           scrollDirection: Axis.vertical,
@@ -113,10 +113,7 @@ class _HomeScreen5State extends State<HomeScreen5> {
                                       Text(
                                         "Description :- ${snapshot.data![index].description}",
                                         style: TextStyle(
-                                          fontSize: 15.0,
-                                          color:
-                                              Color.fromARGB(255, 86, 145, 174),
-                                        ),
+                                            fontSize: 13.0, color: Colors.grey),
                                       ),
                                       SizedBox(height: 10),
                                       Text(

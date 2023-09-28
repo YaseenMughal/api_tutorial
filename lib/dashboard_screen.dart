@@ -3,6 +3,7 @@ import 'package:api_tutorial/home_screen2.dart';
 import 'package:api_tutorial/home_screen3.dart';
 import 'package:api_tutorial/home_screen4.dart';
 import 'package:api_tutorial/home_screen5.dart';
+import 'package:api_tutorial/upload_image_screen.dart';
 import 'package:flutter/material.dart';
 
 class DashboardScreen extends StatefulWidget {

@@ -1,5 +1,5 @@
-import 'package:api_tutorial/dashboard_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:api_tutorial/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.teal,
       ),
       debugShowCheckedModeBanner: false,
-      home: const DashboardScreen(),
+      home: const SignupScreen(),
     );
   }
 }
